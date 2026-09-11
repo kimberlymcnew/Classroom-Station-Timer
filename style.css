@@ -1,30 +1,42 @@
 :root {
-  --bg: #f5f1ea;
-  --card: #fffdf9;
-  --ink: #253238;
-  --muted: #6d7779;
-  --accent: #6a8f7b;
-  --accent-dark: #4e6f5e;
-  --accent-soft: #dfeae4;
-  --line: #ddd8cf;
-  --warm: #d99b72;
-  --shadow: 0 18px 45px rgba(50, 61, 57, 0.10);
+  --bg: #fff8fb;
+  --card: #fffefe;
+  --ink: #4f4a59;
+  --muted: #7f7888;
+
+  --pink: #f7c6d9;
+  --peach: #ffd6b8;
+  --yellow: #f8e7a7;
+  --mint: #c9eadc;
+  --blue: #c9e2f5;
+  --lavender: #d9cff4;
+
+  --accent: #b9a8e3;
+  --accent-dark: #8573b5;
+  --line: #e9e1eb;
+  --shadow: 0 18px 45px rgba(105, 89, 120, 0.11);
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(217,155,114,.16), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(106,143,123,.18), transparent 30%),
-    var(--bg);
+    radial-gradient(circle at 8% 8%, rgba(247,198,217,.55), transparent 25%),
+    radial-gradient(circle at 92% 12%, rgba(201,226,245,.55), transparent 25%),
+    radial-gradient(circle at 12% 92%, rgba(201,234,220,.5), transparent 25%),
+    radial-gradient(circle at 90% 88%, rgba(255,214,184,.5), transparent 25%),
+    #fffafc;
   color: var(--ink);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-button, select, input {
+button,
+select,
+input {
   font: inherit;
 }
 
@@ -46,7 +58,10 @@ button {
   margin-bottom: 22px;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   margin-top: 0;
 }
 
@@ -54,6 +69,18 @@ h1 {
   margin-bottom: 6px;
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1;
+  background: linear-gradient(
+    90deg,
+    #d98fac,
+    #d69d72,
+    #c5aa4d,
+    #70ad93,
+    #77a9cf,
+    #9b86ce
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .subtitle {
@@ -72,20 +99,21 @@ h1 {
 .setup-card,
 .display-card,
 .stations-card {
-  background: rgba(255, 253, 249, .94);
-  border: 1px solid rgba(221, 216, 207, .9);
-  border-radius: 24px;
+  background: rgba(255, 254, 254, .94);
+  border: 1px solid rgba(233, 225, 235, .95);
+  border-radius: 26px;
   box-shadow: var(--shadow);
 }
 
 .setup-card {
   padding: 18px;
   margin-bottom: 22px;
+  border-top: 5px solid var(--pink);
 }
 
 .setup-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 14px;
 }
 
@@ -117,13 +145,23 @@ select {
 .toggle-row input {
   width: 22px;
   height: 22px;
-  accent-color: var(--accent);
+  accent-color: var(--accent-dark);
 }
 
 .display-card {
   text-align: center;
   padding: 34px 24px 30px;
   margin-bottom: 22px;
+  border-top: 7px solid transparent;
+  border-image: linear-gradient(
+    90deg,
+    var(--pink),
+    var(--peach),
+    var(--yellow),
+    var(--mint),
+    var(--blue),
+    var(--lavender)
+  ) 1;
 }
 
 .round-label {
@@ -154,6 +192,7 @@ select {
 
 .timer {
   margin: 22px 0 18px;
+  color: #75639f;
   font-variant-numeric: tabular-nums;
   font-weight: 800;
   font-size: clamp(5rem, 14vw, 10rem);
@@ -163,17 +202,25 @@ select {
 
 .progress-track {
   width: min(720px, 100%);
-  height: 16px;
+  height: 17px;
   margin: 0 auto 24px;
   overflow: hidden;
-  background: #ece8e0;
+  background: #f1edf3;
   border-radius: 999px;
 }
 
 .progress-bar {
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--warm));
+  background: linear-gradient(
+    90deg,
+    var(--pink),
+    var(--peach),
+    var(--yellow),
+    var(--mint),
+    var(--blue),
+    var(--lavender)
+  );
   border-radius: inherit;
   transition: width .4s linear;
 }
@@ -188,20 +235,20 @@ select {
 .primary-btn,
 .secondary-btn {
   border: 0;
-  border-radius: 14px;
+  border-radius: 15px;
   padding: 13px 18px;
   font-weight: 800;
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
 
 .primary-btn {
-  background: var(--accent);
-  color: white;
-  box-shadow: 0 8px 20px rgba(106,143,123,.28);
+  background: var(--lavender);
+  color: #514665;
+  box-shadow: 0 8px 20px rgba(155, 134, 206, .20);
 }
 
 .primary-btn:hover {
-  background: var(--accent-dark);
+  background: #c8b9ec;
 }
 
 .secondary-btn {
@@ -222,6 +269,7 @@ button:hover {
 
 .stations-card {
   padding: 24px;
+  border-top: 5px solid var(--blue);
 }
 
 .section-heading {
@@ -257,13 +305,37 @@ button:hover {
   gap: 10px;
   padding: 12px;
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 17px;
   background: white;
 }
 
+.station-row:nth-child(6n+1) {
+  background: #fff1f6;
+}
+
+.station-row:nth-child(6n+2) {
+  background: #fff4e9;
+}
+
+.station-row:nth-child(6n+3) {
+  background: #fff9df;
+}
+
+.station-row:nth-child(6n+4) {
+  background: #eefaf4;
+}
+
+.station-row:nth-child(6n+5) {
+  background: #eef7fd;
+}
+
+.station-row:nth-child(6n+6) {
+  background: #f4f0fd;
+}
+
 .station-row.active {
-  background: var(--accent-soft);
-  border-color: #b8ccbf;
+  border: 2px solid #9b86ce;
+  box-shadow: 0 0 0 4px rgba(217, 207, 244, .35);
 }
 
 .station-number {
@@ -272,7 +344,7 @@ button:hover {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: var(--ink);
+  background: #6f6677;
   color: white;
   font-weight: 800;
 }
@@ -294,7 +366,7 @@ footer {
   font-size: .9rem;
 }
 
-@media (max-width: 820px) {
+@media (max-width: 900px) {
   .setup-grid {
     grid-template-columns: repeat(2, 1fr);
   }
