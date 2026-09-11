@@ -3,35 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Classroom Station Timer</title>
+  <meta name="theme-color" content="#fff9fc" />
+  <title>StationPop</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <div class="page-decor decor-left"></div>
+  <div class="page-decor decor-right"></div>
+
   <main class="app-shell">
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">CLASSROOM TOOL</p>
-        <h1>Station Timer</h1>
-        <p class="subtitle">Set your stations, choose a time, and rotate automatically.</p>
+
+    <header class="brand-header">
+      <div class="mini-note left-note">
+        PLAN<br>
+        ROTATE<br>
+        LEARN<br>
+        REPEAT ♡
       </div>
-      <button id="fullscreenBtn" class="secondary-btn" aria-label="Toggle fullscreen">⛶ Full Screen</button>
+
+      <div class="brand-center">
+        <div class="rainbow" aria-hidden="true">
+          <span class="arc arc1"></span>
+          <span class="arc arc2"></span>
+          <span class="arc arc3"></span>
+          <span class="arc arc4"></span>
+          <span class="arc arc5"></span>
+          <span class="rainbow-heart">♥</span>
+        </div>
+
+        <div class="brand-copy">
+          <h1>StationPop</h1>
+          <p>Classroom rotations made simple. ♡</p>
+        </div>
+      </div>
+
+      <div class="teacher-note">
+        Same students.<br>
+        Different learning.<br>
+        Brighter days. ♡
+      </div>
     </header>
 
     <section class="setup-card">
       <div class="setup-grid">
+
         <label>
-          <span>Minutes per station</span>
+          <span>Number of Stations</span>
+          <select id="stationCountSelect"></select>
+        </label>
+
+        <label>
+          <span>Time per Station</span>
           <select id="minutesSelect"></select>
         </label>
 
         <label>
-          <span>Transition time</span>
+          <span>Transition Time</span>
           <select id="transitionSelect"></select>
         </label>
 
-        <label>
-          <span>Number of stations</span>
-          <select id="stationCountSelect"></select>
+        <label class="toggle-row">
+          <span>Sound</span>
+          <input id="soundToggle" type="checkbox" checked />
         </label>
 
         <label class="toggle-row">
@@ -39,49 +73,72 @@
           <input id="autoAdvanceToggle" type="checkbox" checked />
         </label>
 
-        <label class="toggle-row">
-          <span>Sound</span>
-          <input id="soundToggle" type="checkbox" checked />
-        </label>
       </div>
     </section>
 
     <section class="display-card">
-      <p class="round-label" id="roundLabel">Station 1 of 4</p>
-      <div class="current-station-wrap">
-        <span class="small-label" id="modeLabel">Current Station</span>
-        <h2 id="currentStationName">Teacher Table</h2>
+
+      <div class="doodle doodle-left">
+        Good<br>
+        Things<br>
+        Happen<br>
+        Here ♡
       </div>
 
-      <div id="timer" class="timer" aria-live="polite">10:00</div>
-
-      <div class="progress-track" aria-hidden="true">
-        <div id="progressBar" class="progress-bar"></div>
+      <div class="sparkles sparkles-right">
+        ✦<br>✧
       </div>
 
-      <div class="controls">
-        <button id="startPauseBtn" class="primary-btn">▶ Start</button>
-        <button id="resetBtn" class="secondary-btn">↺ Reset</button>
-        <button id="nextBtn" class="secondary-btn">Next Station →</button>
+      <div class="timer-content">
+        <p class="round-label" id="roundLabel">Station 1 of 4</p>
+
+        <div class="current-station-wrap">
+          <span class="small-label" id="modeLabel">Current Station</span>
+          <h2 id="currentStationName">Teacher Table</h2>
+        </div>
+
+        <div id="timer" class="timer" aria-live="polite">10:00</div>
+
+        <div class="progress-track" aria-hidden="true">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <div class="controls">
+          <button id="startPauseBtn" class="primary-btn">▶ Start</button>
+          <button id="resetBtn" class="secondary-btn">↻ Reset</button>
+          <button id="nextBtn" class="secondary-btn">Next Station →</button>
+          <button id="fullscreenBtn" class="secondary-btn" aria-label="Toggle fullscreen">⛶ Fullscreen</button>
+        </div>
+
+        <p id="statusText" class="status-text">Ready when you are.</p>
       </div>
 
-      <p id="statusText" class="status-text">Ready when you are.</p>
+      <div class="mini-growth-note">
+        small<br>
+        groups<br>
+        big<br>
+        growth ♡
+      </div>
+
     </section>
 
     <section class="stations-card">
       <div class="section-heading">
         <div>
           <p class="eyebrow">YOUR ROTATION</p>
-          <h3>Station Names</h3>
+          <h3>Stations</h3>
+          <p class="section-subtitle">Add or edit your station names below.</p>
         </div>
-        <p>Click any name and type to edit it. Your names save automatically.</p>
+        <p class="save-note">Changes save automatically ✨</p>
       </div>
+
       <div id="stationsList" class="stations-list"></div>
     </section>
 
     <footer>
-      Made for smooth classroom rotations ✨
+      StationPop 🌈 • Classroom rotations made simple.
     </footer>
+
   </main>
 
   <script src="script.js"></script>
