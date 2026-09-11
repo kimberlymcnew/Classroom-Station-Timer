@@ -715,3 +715,83 @@ body.fullscreen-mode .display-card {
     text-align: left;
   }
 }
+/* NEW SIMPLE STATIONPOP HEADER */
+
+.simple-brand-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 20px 16px;
+  min-height: 145px;
+}
+
+.simple-brand-header .brand-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+}
+
+.simple-brand-header .brand-copy {
+  text-align: left;
+}
+
+.simple-brand-header .brand-copy h1 {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: .9;
+  letter-spacing: -.05em;
+  font-weight: 900;
+  background: none;
+  color: #424851;
+}
+
+.station-word {
+  color: #424851;
+}
+
+.pop-p {
+  color: #ef7f9d;
+}
+
+.pop-o {
+  color: #f4c45f;
+}
+
+.pop-last {
+  color: #85cdb1;
+}
+
+.simple-brand-header .brand-copy p {
+  margin: 12px 0 0;
+  color: #4f5568;
+  font-family: "Comic Sans MS", "Bradley Hand", cursive;
+  font-size: clamp(1rem, 2vw, 1.45rem);
+  letter-spacing: .03em;
+}
+
+.brand-heart {
+  color: #ef7f9d;
+  font-size: 1.5em;
+  margin-left: 6px;
+}
+
+.simple-brand-header .rainbow {
+  width: 165px;
+  height: 105px;
+}
+
+@media (max-width: 720px) {
+  .simple-brand-header .brand-center {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .simple-brand-header .brand-copy {
+    text-align: center;
+  }
+
+  .simple-brand-header {
+    padding-top: 12px;
+  }
+}
