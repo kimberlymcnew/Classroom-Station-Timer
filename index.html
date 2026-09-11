@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classroom Station Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">CLASSROOM TOOL</p>
+        <h1>Station Timer</h1>
+        <p class="subtitle">Set your stations, choose a time, and rotate automatically.</p>
+      </div>
+      <button id="fullscreenBtn" class="secondary-btn" aria-label="Toggle fullscreen">⛶ Full Screen</button>
+    </header>
+
+    <section class="setup-card">
+      <div class="setup-grid">
+        <label>
+          <span>Minutes per station</span>
+          <select id="minutesSelect"></select>
+        </label>
+
+        <label>
+          <span>Number of stations</span>
+          <select id="stationCountSelect"></select>
+        </label>
+
+        <label class="toggle-row">
+          <span>Auto-advance</span>
+          <input id="autoAdvanceToggle" type="checkbox" checked />
+        </label>
+
+        <label class="toggle-row">
+          <span>Sound</span>
+          <input id="soundToggle" type="checkbox" checked />
+        </label>
+      </div>
+    </section>
+
+    <section class="display-card">
+      <p class="round-label" id="roundLabel">Station 1 of 4</p>
+      <div class="current-station-wrap">
+        <span class="small-label">Current Station</span>
+        <h2 id="currentStationName">Teacher Table</h2>
+      </div>
+
+      <div id="timer" class="timer" aria-live="polite">10:00</div>
+
+      <div class="progress-track" aria-hidden="true">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+
+      <div class="controls">
+        <button id="startPauseBtn" class="primary-btn">▶ Start</button>
+        <button id="resetBtn" class="secondary-btn">↺ Reset</button>
+        <button id="nextBtn" class="secondary-btn">Next Station →</button>
+      </div>
+
+      <p id="statusText" class="status-text">Ready when you are.</p>
+    </section>
+
+    <section class="stations-card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR ROTATION</p>
+          <h3>Station Names</h3>
+        </div>
+        <p>Click any name and type to edit it. Your names save automatically.</p>
+      </div>
+      <div id="stationsList" class="stations-list"></div>
+    </section>
+
+    <footer>
+      Made for smooth classroom rotations ✨
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
